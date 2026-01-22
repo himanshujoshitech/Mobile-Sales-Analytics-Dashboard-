@@ -10,44 +10,18 @@ This project demonstrates how raw sales data can be transformed into a **clean, 
 
 Through this project, I learned and implemented:
 
-- ✔ Understanding & preparing raw datasets  
-- ✔ Creating a **custom calendar using DAX**  
+- ✔ How to understand and prepare a dataset  
+- ✔ Creating a **Custom Calendar using DAX**  
 - ✔ Building relationships in **Data Model View**  
-- ✔ Writing **essential & advanced DAX measures**  
-- ✔ Designing a **professional dashboard UI**  
-- ✔ Using **Edit Interactions**  
-- ✔ Implementing **MTD, QTD, YTD** time intelligence  
+- ✔ Writing **essential and advanced DAX measures**  
+- ✔ Designing a **professional Power BI dashboard**  
+- ✔ Using **Edit Interactions** for better UX  
+- ✔ Implementing **MTD, QTD, YTD**  
 - ✔ Implementing **Same Period Last Year (SPLY)** logic  
 - ✔ Using the **DAX Query View**  
 - ✔ Publishing reports to **Power BI Service**
 
 ---
-
-## 🔗 Building Relationships in the Data Model View
-
-After creating the custom calendar, the next crucial step was **data modeling**.
-
-The project follows a **Star Schema**, where:
-- A central **Fact table (Sales_Data)** contains transaction-level data
-- Multiple **Dimension tables** provide descriptive attributes
-
-### ⭐ Fact Table
-- **Sales_Data**
-  - Stores transaction rows
-  - Contains numerical measures such as *Units Sold, Price per Unit, Sales Amount*
-  - Acts as the core of analysis
-
-### ⭐ Dimension Tables
-- **Custom_Calendar**
-  - Date, Month, Quarter, Year, Day Name
-- **Brand / Mobile Model**
-- **City**
-- **Payment Method**
-
-### 🔗 Relationship Setup
-```text
-Custom_Calendar[Date]  →  Sales_Data[Date]
-
 
 ## 🖼️ Dashboard Screenshots
 
@@ -62,7 +36,7 @@ Custom_Calendar[Date]  →  Sales_Data[Date]
 
 ---
 
-### 📊 Key KPIs Used
+## 📊 Key KPIs Used
 
 - 💰 **Total Sales**
 - 📦 **Total Quantity Sold**
@@ -75,39 +49,41 @@ These KPIs help stakeholders quickly understand **overall performance, trends, a
 
 ---
 
-### 🗂️ Dataset Understanding & Preparation
+## 🗂️ Dataset Understanding & Preparation
 
-- The dataset contains **mobile sales transaction data**
-- Includes attributes such as:
-  - Brand
-  - Mobile Model
-  - City
-  - Payment Method
-  - Units Sold
-  - Price per Unit
-  - Date
-  - Customer Ratings
+The dataset represents **mobile sales transactions** and includes the following attributes:
+
+- Brand  
+- Mobile Model  
+- City  
+- Payment Method  
+- Units Sold  
+- Price per Unit  
+- Transaction Date  
+- Customer Ratings  
 
 🔗 **Dataset Link:**  
 👉 [Mobile Sales Dataset (Excel)](https://github.com/himanshujoshitech/Mobile-Sales-Analytics-Dashboard-/blob/main/Mobile%20Sales%20Data.xlsx)  
 
 
 ### 🔧 Data Preparation Steps
-- Loaded data using **Power Query**
-- Removed inconsistencies & null values
-- Changed correct data types
+- Loaded the dataset using **Power Query**
+- Cleaned and transformed raw data
+- Removed inconsistencies and null values
+- Corrected data types
 - Prepared data for modeling and analysis
 
-📌 *Power Query ensures automated and repeatable transformations on refresh.*
+📌 *Power Query ensures automated, repeatable transformations on refresh.*
 
 ---
 
 ## 📅 Creating a Custom Calendar using DAX
 
 A **Custom Calendar table** was created to enable:
+
 - Time intelligence calculations
 - Continuous date analysis
-- Month / Quarter / Year-based reporting
+- Month, Quarter, and Year-based reporting
 
 ```DAX
 Custom_Calendar = 
@@ -119,54 +95,3 @@ ADDCOLUMNS(
     "Quarter", "Q" & FORMAT([Date], "Q"),
     "Day Name", FORMAT([Date], "dddd")
 )
-````
-
----
-
-## 🔗 Building Relationships in the Data Model View
-
-After creating the custom calendar, the next crucial step was **data modeling**.
-
-The project follows a **Star Schema**, where:
-- A central **Fact table (Sales_Data)** contains transaction-level data
-- Multiple **Dimension tables** provide descriptive attributes
-
-### ⭐ Fact Table
-- **Sales_Data**
-  - Stores transaction rows
-  - Contains numerical measures such as *Units Sold, Price per Unit, Sales Amount*
-  - Acts as the core of analysis
-
-### ⭐ Dimension Tables
-- **Custom_Calendar**
-  - Date, Month, Quarter, Year, Day Name
-- **Brand / Mobile Model**
-- **City**
-- **Payment Method**
-
-### 🔗 Relationship Setup
-```text
-Custom_Calendar[Date]  →  Sales_Data[Date]````
-
-- **Relationship Type:** One-to-Many (1 → *)
-- **Cross-filter Direction:** Single
-- This relationship enables accurate **time-based filtering** and ensures all **DAX time intelligence functions** work correctly.
-
-📌 A proper relationship between the fact table and calendar table is **mandatory** for MTD, QTD, YTD, and Year-over-Year calculations.
-
----
-
-## 🧮 Writing Essential DAX Measures
-
-DAX (Data Analysis Expressions) was used to create **measures** that power all KPIs and insights in the dashboard.
-
-### 🔹 Total Sales
-```DAX
-Total Sales =
-SUMX(
-    Sales_Data,
-    Sales_Data[Units Sold] * Sales_Data[Price Per Unit]
-)
-
-
-
