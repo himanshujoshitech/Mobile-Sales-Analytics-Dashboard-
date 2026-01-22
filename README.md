@@ -79,12 +79,15 @@ The dataset represents **mobile sales transactions** and includes the following 
 
 ## 📅 Creating a Custom Calendar using DAX
 
-A **Custom Calendar table** was created to enable:
+A **Custom Calendar (Date Table)** was created to enable **time intelligence analysis** and to ensure accurate reporting across different time periods.
 
-- Time intelligence calculations
-- Continuous date analysis
-- Month, Quarter, and Year-based reporting
+### Why a Custom Calendar?
+- Enables MTD, QTD, YTD, and YoY calculations
+- Provides continuous dates (no missing days)
+- Allows proper sorting of months and quarters
+- Supports advanced time-based analysis
 
+### DAX Used to Create Calendar
 ```DAX
 Custom_Calendar = 
 ADDCOLUMNS(
@@ -94,4 +97,7 @@ ADDCOLUMNS(
     "Month Number", MONTH([Date]),
     "Quarter", "Q" & FORMAT([Date], "Q"),
     "Day Name", FORMAT([Date], "dddd")
-)
+)````
+
+---
+
