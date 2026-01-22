@@ -146,7 +146,7 @@ The project follows a **Star Schema**, where:
 
 ### 🔗 Relationship Setup
 ```text
-Custom_Calendar[Date]  →  Sales_Data[Date]
+Custom_Calendar[Date]  →  Sales_Data[Date]````
 
 - **Relationship Type:** One-to-Many (1 → *)
 - **Cross-filter Direction:** Single
