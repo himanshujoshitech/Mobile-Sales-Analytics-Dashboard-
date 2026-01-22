@@ -1,30 +1,29 @@
 # 📱 Mobile Sales Dashboard | Power BI Project
 
-🚀 A complete **end-to-end Power BI project** focused on analyzing mobile sales performance using **advanced data modeling, DAX, and time intelligence techniques**.
+🚀 An **end-to-end Power BI project** focused on analyzing mobile sales performance using **data modeling, DAX, time intelligence, and professional dashboard design**.
 
-This project demonstrates how raw sales data can be transformed into a **professional, interactive, and insight-driven dashboard** suitable for real-world business use.
-
----
-
-## 🧠 Project Overview
-
-The **Mobile Sales Dashboard** provides deep insights into:
-- 📊 Sales performance
-- 📦 Quantity sold
-- 💳 Payment methods
-- 🏙️ City-wise sales
-- ⭐ Customer ratings
-- 📆 Time-based analysis (MTD, QTD, YTD, Same Period Last Year)
-
-It follows **industry best practices** such as:
-- Star Schema data modeling
-- Custom Calendar creation
-- Advanced DAX measures
-- Clean and professional UI design
+This project demonstrates how raw sales data can be transformed into a **clean, interactive, and business-ready dashboard**, following **real-world BI best practices**.
 
 ---
 
-## 🖼️ Dashboard Snapshots
+## 🧠 Overview of Learning
+
+Through this project, I learned and implemented:
+
+- ✔ Understanding & preparing raw datasets  
+- ✔ Creating a **custom calendar using DAX**  
+- ✔ Building relationships in **Data Model View**  
+- ✔ Writing **essential & advanced DAX measures**  
+- ✔ Designing a **professional dashboard UI**  
+- ✔ Using **Edit Interactions**  
+- ✔ Implementing **MTD, QTD, YTD** time intelligence  
+- ✔ Implementing **Same Period Last Year (SPLY)** logic  
+- ✔ Using the **DAX Query View**  
+- ✔ Publishing reports to **Power BI Service**
+
+---
+
+## 🖼️ Dashboard Screenshots
 
 ### 🔹 Main Dashboard
 ![Main Dashboard](Dashboard.png)
@@ -37,42 +36,57 @@ It follows **industry best practices** such as:
 
 ---
 
-## 📌 Key KPIs Used
+## 📊 Key KPIs Used
 
 - 💰 **Total Sales**
 - 📦 **Total Quantity Sold**
 - 🔁 **Total Transactions**
 - 💵 **Average Price**
 - 📈 **MTD / QTD / YTD Sales**
-- 📊 **Same Period Last Year Comparison**
+- ⏪ **Same Period Last Year Comparison**
+
+These KPIs help stakeholders quickly understand **overall performance, trends, and growth**.
 
 ---
 
 ## 🗂️ Dataset Understanding & Preparation
 
-- Imported raw sales data from Excel
-- Cleaned and transformed data using **Power Query**
-- Ensured correct data types and removed inconsistencies
-- Prepared data for analytical modeling
+- The dataset contains **mobile sales transaction data**
+- Includes attributes such as:
+  - Brand
+  - Mobile Model
+  - City
+  - Payment Method
+  - Units Sold
+  - Price per Unit
+  - Date
+  - Customer Ratings
 
-📌 *Why Power Query?*  
-✔ Automated transformations  
-✔ Reusable steps  
-✔ Error-free refresh  
+🔗 **Dataset Link:**  
+👉 [Mobile Sales Dataset (Excel)](https://github.com/himanshujoshitech/Mobile-Sales-Analytics-Dashboard-/blob/main/Mobile%20Sales%20Data.xlsx)  
+
+
+### 🔧 Data Preparation Steps
+- Loaded data using **Power Query**
+- Removed inconsistencies & null values
+- Changed correct data types
+- Prepared data for modeling and analysis
+
+📌 *Power Query ensures automated and repeatable transformations on refresh.*
 
 ---
 
-## 📅 Custom Calendar Creation (DAX)
+## 📅 Creating a Custom Calendar using DAX
 
-A **Custom Calendar table** was created using DAX to enable:
+A **Custom Calendar table** was created to enable:
 - Time intelligence calculations
 - Continuous date analysis
-- Month, Quarter, Year level reporting
+- Month / Quarter / Year-based reporting
 
 ```DAX
-Calendar = 
+Custom_Calendar = 
 ADDCOLUMNS(
-    CALENDAR(DATE(2022,1,1), DATE(2024,12,31)),
+    CALENDAR (DATE(2022,1,1), DATE(2024,12,31)),
     "Year", YEAR([Date]),
     "Month", FORMAT([Date], "MMMM"),
     "Month Number", MONTH([Date]),
