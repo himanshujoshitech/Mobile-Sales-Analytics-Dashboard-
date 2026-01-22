@@ -97,7 +97,8 @@ ADDCOLUMNS(
     "Month Number", MONTH([Date]),
     "Quarter", "Q" & FORMAT([Date], "Q"),
     "Day Name", FORMAT([Date], "dddd")
-)````
+)
+```
 
 ---
 
