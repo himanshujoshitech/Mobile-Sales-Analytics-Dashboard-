@@ -148,6 +148,25 @@ The project follows a **Star Schema**, where:
 ```text
 Custom_Calendar[Date]  →  Sales_Data[Date]
 
+- **Relationship Type:** One-to-Many (1 → *)
+- **Cross-filter Direction:** Single
+- This relationship enables accurate **time-based filtering** and ensures all **DAX time intelligence functions** work correctly.
+
+📌 A proper relationship between the fact table and calendar table is **mandatory** for MTD, QTD, YTD, and Year-over-Year calculations.
+
+---
+
+## 🧮 Writing Essential DAX Measures
+
+DAX (Data Analysis Expressions) was used to create **measures** that power all KPIs and insights in the dashboard.
+
+### 🔹 Total Sales
+```DAX
+Total Sales =
+SUMX(
+    Sales_Data,
+    Sales_Data[Units Sold] * Sales_Data[Price Per Unit]
+)
 
 
 
