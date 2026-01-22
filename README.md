@@ -138,3 +138,27 @@ SUMX(
 )
 ```
 
+### 🔹 Total Quantity Sold
+
+```DAX
+Total Quantity Sold =
+SUM(Sales_Data[Units Sold])
+```
+
+### 🔹 Total Transactions
+
+```DAX
+Total Transactions =
+COUNT(Sales_Data[Transaction ID])
+```
+
+### 🔹 Average Price
+
+```DAX
+Average Price =
+AVERAGE(Sales_Data[Price Per Unit])
+```
+
+📌 These measures serve as the base metrics for analysis and reporting.
+
+---
