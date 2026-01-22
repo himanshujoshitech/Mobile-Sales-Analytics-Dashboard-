@@ -96,7 +96,4 @@ ADDCOLUMNS(
 
 ---
 
-✔ The calendar table was marked as Date Table
-✔ Used as the base for all time intelligence calculations
 
----
