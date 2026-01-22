@@ -93,3 +93,8 @@ ADDCOLUMNS(
     "Quarter", "Q" & FORMAT([Date], "Q"),
     "Day Name", FORMAT([Date], "dddd")
 )
+
+✔ The calendar table was marked as Date Table
+✔ Used as the base for all time intelligence calculations
+
+---
