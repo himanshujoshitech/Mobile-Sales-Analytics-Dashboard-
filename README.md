@@ -102,3 +102,22 @@ ADDCOLUMNS(
 
 ---
 
+## 🔗 Building Relationships in the Data Model View
+
+After creating the custom calendar, relationships were built following **Star Schema best practices** to ensure accurate analysis and optimal performance.
+
+### 📋 Tables Involved
+
+- **Fact Table:** `Sales_Data`  
+  - Contains transaction-level data  
+  - Stores numerical metrics such as *Units Sold, Price per Unit, Sales Amount*
+
+- **Dimension Table:** `Custom_Calendar`  
+  - Contains date-related attributes such as *Date, Month, Quarter, Year, Day Name*
+
+### 🔗 Relationship Setup
+
+```text
+Custom_Calendar[Date]  →  Sales_Data[Date]
+
+
