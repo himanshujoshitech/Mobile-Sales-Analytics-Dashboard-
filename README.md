@@ -23,6 +23,32 @@ Through this project, I learned and implemented:
 
 ---
 
+## 🔗 Building Relationships in the Data Model View
+
+After creating the custom calendar, the next crucial step was **data modeling**.
+
+The project follows a **Star Schema**, where:
+- A central **Fact table (Sales_Data)** contains transaction-level data
+- Multiple **Dimension tables** provide descriptive attributes
+
+### ⭐ Fact Table
+- **Sales_Data**
+  - Stores transaction rows
+  - Contains numerical measures such as *Units Sold, Price per Unit, Sales Amount*
+  - Acts as the core of analysis
+
+### ⭐ Dimension Tables
+- **Custom_Calendar**
+  - Date, Month, Quarter, Year, Day Name
+- **Brand / Mobile Model**
+- **City**
+- **Payment Method**
+
+### 🔗 Relationship Setup
+```text
+Custom_Calendar[Date]  →  Sales_Data[Date]
+
+
 ## 🖼️ Dashboard Screenshots
 
 ### 🔹 Main Dashboard
@@ -36,7 +62,7 @@ Through this project, I learned and implemented:
 
 ---
 
-## 📊 Key KPIs Used
+### 📊 Key KPIs Used
 
 - 💰 **Total Sales**
 - 📦 **Total Quantity Sold**
@@ -49,7 +75,7 @@ These KPIs help stakeholders quickly understand **overall performance, trends, a
 
 ---
 
-## 🗂️ Dataset Understanding & Preparation
+### 🗂️ Dataset Understanding & Preparation
 
 - The dataset contains **mobile sales transaction data**
 - Includes attributes such as:
@@ -97,7 +123,31 @@ ADDCOLUMNS(
 
 ---
 
----
+## 🔗 Building Relationships in the Data Model View
+
+After creating the custom calendar, the next crucial step was **data modeling**.
+
+The project follows a **Star Schema**, where:
+- A central **Fact table (Sales_Data)** contains transaction-level data
+- Multiple **Dimension tables** provide descriptive attributes
+
+### ⭐ Fact Table
+- **Sales_Data**
+  - Stores transaction rows
+  - Contains numerical measures such as *Units Sold, Price per Unit, Sales Amount*
+  - Acts as the core of analysis
+
+### ⭐ Dimension Tables
+- **Custom_Calendar**
+  - Date, Month, Quarter, Year, Day Name
+- **Brand / Mobile Model**
+- **City**
+- **Payment Method**
+
+### 🔗 Relationship Setup
+```text
+Custom_Calendar[Date]  →  Sales_Data[Date]
+
 
 
 
