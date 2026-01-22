@@ -119,5 +119,22 @@ After creating the custom calendar, relationships were built following **Star Sc
 
 ```text
 Custom_Calendar[Date]  →  Sales_Data[Date]
+```
+📌 This relationship ensures accurate **date filtering** and enables all **time intelligence calculations** such as **MTD, QTD, YTD, and Year-over-Year analysis**.
 
+---
+
+## 🧮 Writing Essential DAX Measures
+
+DAX (Data Analysis Expressions) was used to create **core measures** that power all KPIs across the dashboard.
+
+### 🔹 Total Sales
+
+```DAX
+Total Sales =
+SUMX(
+    Sales_Data,
+    Sales_Data[Units Sold] * Sales_Data[Price Per Unit]
+)
+```
 
